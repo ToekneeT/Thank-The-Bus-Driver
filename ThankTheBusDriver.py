@@ -2,7 +2,7 @@ import cv2
 import numpy
 import win32api
 import time
-from pyautogui import press
+import pyautogui
 from PIL import ImageGrab, Image, ImageFilter
 
 def find_pattern(target, threshold=0.95, show=False):
@@ -42,12 +42,15 @@ else:
     # Goes to 1440.
     target = "target.bmp"
 
+#Pyautogui has a failsafe, but that only affects if it's touching the mouse, which it isn't.
+pyautogui.FAILSAFE = False
+
 #Only works for letters a-z and numbers. Won't work with prntscrn, ctrl, tab, etc.
 keybind = input("Enter emote keybind: ")
 
 while True:
     # Function returns a list of coordinates, if the len is greater than 0, it found a target.
-    if len(find_pattern(target, threshold=0.95)) > 0:
+    if len(find_pattern(target)) > 0:
         # Emote keybind.
-        press(keybind)
+        pyautogui.press(keybind)
         time.sleep(5)
