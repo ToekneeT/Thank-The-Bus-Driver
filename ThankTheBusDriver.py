@@ -46,11 +46,11 @@ else:
 pyautogui.FAILSAFE = False
 
 #Only works for letters a-z and numbers. Won't work with prntscrn, ctrl, tab, etc.
-keybind = input("Enter emote keybind: ")
+#keybind = input("Enter emote keybind: ")
 
 while True:
     # Function returns a list of coordinates, if the len is greater than 0, it found a target.
     if len(find_pattern(target)) > 0:
         # Emote keybind.
-        pyautogui.press(keybind)
+        pyautogui.press("z")
         time.sleep(5)

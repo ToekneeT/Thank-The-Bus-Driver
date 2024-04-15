@@ -6,6 +6,12 @@ Can set your emote bind, but won't work on special cases such as tab, ctrl, shif
 ## How to run
 In order to run this program, you'll need to install a few libraries.
 
+You can run in your terminal.
+
+`pip install -r requirements.txt`
+
+Alternatively, you can install the dependencies manually with the following.
+
 OpenCV
 
 `pip install opencv-python`
